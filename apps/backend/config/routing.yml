@@ -1,3 +1,21 @@
+userdata:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                userdata
+    module:               userdata
+    prefix_path:          /userdata
+    column:               id
+    with_wildcard_routes: true
+
+user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                user
+    module:               user
+    prefix_path:          /user
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 

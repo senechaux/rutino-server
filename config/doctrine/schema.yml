@@ -6,6 +6,8 @@ user:
     password:     { type: string(255), notnull: true }
     hash:         { type: string(255), notnull: true }
     email:        { type: string(255), notnull: true }
+    created_at:  { type: timestamp, notnull: true }
+    updated_at:  { type: timestamp, notnull: true }
 
 userdata:
   actAs: { Timestampable: ~ }
@@ -13,5 +15,7 @@ userdata:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
     user_id:      { type: integer(4), notnull: true }
     information:  { type: string(4000), notnull: true }
+    created_at:  { type: timestamp, notnull: true }
+    updated_at:  { type: timestamp, notnull: true }
   relations:
     user: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: DataUser }

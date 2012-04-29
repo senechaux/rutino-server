@@ -8,16 +8,22 @@
  * @property integer $id
  * @property integer $user_id
  * @property string $information
+ * @property timestamp $created_at
+ * @property timestamp $updated_at
  * @property user $user
  * 
- * @method integer  getId()          Returns the current record's "id" value
- * @method integer  getUserId()      Returns the current record's "user_id" value
- * @method string   getInformation() Returns the current record's "information" value
- * @method user     getUser()        Returns the current record's "user" value
- * @method userdata setId()          Sets the current record's "id" value
- * @method userdata setUserId()      Sets the current record's "user_id" value
- * @method userdata setInformation() Sets the current record's "information" value
- * @method userdata setUser()        Sets the current record's "user" value
+ * @method integer   getId()          Returns the current record's "id" value
+ * @method integer   getUserId()      Returns the current record's "user_id" value
+ * @method string    getInformation() Returns the current record's "information" value
+ * @method timestamp getCreatedAt()   Returns the current record's "created_at" value
+ * @method timestamp getUpdatedAt()   Returns the current record's "updated_at" value
+ * @method user      getUser()        Returns the current record's "user" value
+ * @method userdata  setId()          Sets the current record's "id" value
+ * @method userdata  setUserId()      Sets the current record's "user_id" value
+ * @method userdata  setInformation() Sets the current record's "information" value
+ * @method userdata  setCreatedAt()   Sets the current record's "created_at" value
+ * @method userdata  setUpdatedAt()   Sets the current record's "updated_at" value
+ * @method userdata  setUser()        Sets the current record's "user" value
  * 
  * @package    rutino-server
  * @subpackage model
@@ -44,6 +50,14 @@ abstract class Baseuserdata extends sfDoctrineRecord
              'type' => 'string',
              'notnull' => true,
              'length' => 4000,
+             ));
+        $this->hasColumn('created_at', 'timestamp', null, array(
+             'type' => 'timestamp',
+             'notnull' => true,
+             ));
+        $this->hasColumn('updated_at', 'timestamp', null, array(
+             'type' => 'timestamp',
+             'notnull' => true,
              ));
     }
 
