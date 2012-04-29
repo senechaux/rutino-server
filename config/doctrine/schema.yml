@@ -1,0 +1,17 @@
+user:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    user:         { type: string(255), notnull: true }
+    password:     { type: string(255), notnull: true }
+    hash:         { type: string(255), notnull: true }
+    email:        { type: string(255), notnull: true }
+
+userdata:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    user_id:      { type: integer(4), notnull: true }
+    information:  { type: string(4000), notnull: true }
+  relations:
+    user: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: DataUser }
