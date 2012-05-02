@@ -13,7 +13,7 @@ abstract class BaseuserFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'user'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'username'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'password'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'hash'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'email'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -22,7 +22,7 @@ abstract class BaseuserFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'user'       => new sfValidatorPass(array('required' => false)),
+      'username'   => new sfValidatorPass(array('required' => false)),
       'password'   => new sfValidatorPass(array('required' => false)),
       'hash'       => new sfValidatorPass(array('required' => false)),
       'email'      => new sfValidatorPass(array('required' => false)),
@@ -48,7 +48,7 @@ abstract class BaseuserFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'         => 'Number',
-      'user'       => 'Text',
+      'username'   => 'Text',
       'password'   => 'Text',
       'hash'       => 'Text',
       'email'      => 'Text',
