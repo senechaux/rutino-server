@@ -11,14 +11,14 @@ userdata:
     updated_at: '2012-04-29 20:55:23'
 user:
   user_1:
-    user: user1
+    username: user1
     password: user1
     hash: user1
     email: user1@rutino.com
     created_at: '2012-04-29 20:54:17'
     updated_at: '2012-04-29 20:54:46'
   user_2:
-    user: user2
+    username: user2
     password: user2
     hash: user2
     email: user2@rutino.com
