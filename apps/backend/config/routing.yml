@@ -1,20 +1,75 @@
-userdata:
+periodic_transaction:
   class: sfDoctrineRouteCollection
   options:
-    model:                userdata
-    module:               userdata
-    prefix_path:          /userdata
+    model:                PeriodicTransaction
+    module:               periodic_transaction
+    prefix_path:          /periodic_transaction
     column:               id
     with_wildcard_routes: true
 
-user:
+transaction:
   class: sfDoctrineRouteCollection
   options:
-    model:                user
+    model:                Transaction
+    module:               transaction
+    prefix_path:          /transaction
+    column:               id
+    with_wildcard_routes: true
+
+report:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Report
+    module:               report
+    prefix_path:          /report
+    column:               id
+    with_wildcard_routes: true
+
+account_type:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AccountType
+    module:               account_type
+    prefix_path:          /account_type
+    column:               id
+    with_wildcard_routes: true
+
+currency:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Currency
+    module:               currency
+    prefix_path:          /currency
+    column:               id
+    with_wildcard_routes: true
+
+user_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                User
     module:               user
     prefix_path:          /user
     column:               id
     with_wildcard_routes: true
+
+account:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Account
+    module:               account
+    prefix_path:          /account
+    column:               id
+    with_wildcard_routes: true
+
+wallet:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Wallet
+    module:               wallet
+    prefix_path:          /wallet
+    column:               id
+    with_wildcard_routes: true
+
 
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing

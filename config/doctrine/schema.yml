@@ -2,22 +2,45 @@ User:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    username:    { type: string(255), notnull: true }
-    password:    { type: string(255), notnull: true }
+    username:     { type: string(255), notnull: true }
+    password:     { type: string(255), notnull: true }
     hash:         { type: string(255), notnull: true }
     email:        { type: string(255), notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
+
+AccountType:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    mobile_id:    { type: integer(4), notnull: false }
+    name:         { type: string(255), notnull: true }
+    description:  { type: string(4000), notnull: false }
+    icon:         { type: blob }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
+
+Currency:
+  actAs: { Timestampable: ~ }
+  columns:
+    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    mobile_id:    { type: integer(4), notnull: false }
+    name:         { type: string(255), notnull: true }
+    description:  { type: string(4000) }
+    exchange:     { type: float, notnull: true }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
 
 Wallet:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    mobile_id:    { type: integer(4), notnull: false }
     user_id:      { type: integer(4), notnull: true }
-    name:  { type: string(4000), notnull: true }
-    description:  { type: string(4000), notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    name:         { type: string(255), notnull: true }
+    description:  { type: string(4000), notnull: false }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
   relations:
     User: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: WalletUser }
 
@@ -25,84 +48,69 @@ Account:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    wallet_id:      { type: integer(4), notnull: true }
-    type_id:      { type: integer(4), notnull: true }
-    name:  { type: string(4000), notnull: true }
-    description:  { type: string(4000), notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    mobile_id:    { type: integer(4), notnull: false }
+    wallet_id:    { type: integer(4), notnull: true }
+    account_type_id: { type: integer(4), notnull: true }
+    name:         { type: string(255), notnull: true }
+    description:  { type: string(4000), notnull: false }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
   relations:
     Wallet: { onDelete: CASCADE, local: wallet_id, foreign: id, foreignAlias: AccountWallet }
-    Type: { onDelete: CASCADE, local: type_id, foreign: id, foreignAlias: AccountType }
+    AccountType:   { onDelete: CASCADE, local: account_type_id, foreign: id, foreignAlias: AccountType }
 
 Transaction:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    account_id:      { type: integer(4), notnull: true }
-    currency_id:      { type: integer(4), notnull: true }
-    name:  { type: string(4000), notnull: true }
-    description:  { type: string(4000), notnull: true }
-    amount:  { type: float, notnull: true }
-    date:  { type: timestamp, notnull: true }
-    picture:  { type: blob }
-    geo:  { type: string(4000) }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    mobile_id:    { type: integer(4), notnull: false }
+    account_id:   { type: integer(4), notnull: true }
+    currency_id:  { type: integer(4), notnull: true }
+    name:         { type: string(255), notnull: false }
+    description:  { type: string(4000), notnull: false }
+    amount:       { type: float, notnull: true }
+    date:         { type: timestamp, notnull: true }
+    picture:      { type: blob }
+    geo:          { type: string(4000) }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
   relations:
-    Account: { onDelete: CASCADE, local: account_id, foreign: id, foreignAlias: TransactionAccount }
+    Account:  { onDelete: CASCADE, local: account_id, foreign: id, foreignAlias: TransactionAccount }
     Currency: { onDelete: CASCADE, local: currency_id, foreign: id, foreignAlias: TransactionCurrency }
 
 PeriodicTransaction:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    account_id:      { type: integer(4), notnull: true }
-    currency_id:      { type: integer(4), notnull: true }
-    name:  { type: string(4000) }
+    mobile_id:    { type: integer(4), notnull: false }
+    account_id:   { type: integer(4), notnull: true }
+    currency_id:  { type: integer(4), notnull: true }
+    name:         { type: string(4000) }
     description:  { type: string(4000) }
-    amount:  { type: float, notnull: true }
-    date:  { type: timestamp, notnull: true }
-    picture:  { type: blob, notnull: false }
-    geo:  { type: string(4000), notnull: false }
+    amount:       { type: float, notnull: true }
+    date:         { type: timestamp, notnull: true }
+    picture:      { type: blob, notnull: false }
+    geo:          { type: string(4000), notnull: false }
     periodicity:  { type: integer(4), notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
   relations:
-    Account: { onDelete: CASCADE, local: account_id, foreign: id, foreignAlias: PeriodicTransactionAccount }
+    Account:  { onDelete: CASCADE, local: account_id, foreign: id, foreignAlias: PeriodicTransactionAccount }
     Currency: { onDelete: CASCADE, local: currency_id, foreign: id, foreignAlias: PeriodicTransactionCurrency }
 
 Report:
   actAs: { Timestampable: ~ }
   columns:
     id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    wallet_id:      { type: integer(4), notnull: true }
-    name:  { type: string(4000), notnull: true }
+    mobile_id:    { type: integer(4), notnull: false }
+    wallet_id:    { type: integer(4), notnull: true }
+    name:         { type: string(255), notnull: false }
     description:  { type: string(4000), notnull: false }
-    date_from:  { type: timestamp, notnull: true }
-    date_to:  { type: timestamp, notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
+    date_from:    { type: timestamp, notnull: true }
+    date_to:      { type: timestamp, notnull: true }
+    created_at:   { type: timestamp, notnull: true }
+    updated_at:   { type: timestamp, notnull: true }
   relations:
     Wallet: { onDelete: CASCADE, local: wallet_id, foreign: id, foreignAlias: ReportWallet }
 
-AccountType:
-  actAs: { Timestampable: ~ }
-  columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    name:         { type: string(4000), notnull: true }
-    description:         { type: string(4000) }
-    icon:         { type: blob }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
-
-Currency:
-  actAs: { Timestampable: ~ }
-  columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    name:         { type: string(4000), notnull: true }
-    description:         { type: string(4000) }
-    exchange:     { type: float, notnull: true }
-    created_at:  { type: timestamp, notnull: true }
-    updated_at:  { type: timestamp, notnull: true }
 
