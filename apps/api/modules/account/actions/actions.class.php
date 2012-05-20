@@ -23,7 +23,7 @@ class accountActions extends autoaccountActions
 			  ->select('a.id')
 			  ->from('account a')
 			  ->innerJoin('a.Wallet w')
-			  ->innerJoin('w.User u')
+			  ->innerJoin('w.sfGuardUser u')
 			  ->where('user_id = ?', $user_id)
 			  ->addWhere('id = ?', $item_id)
 			  ->limit(1);

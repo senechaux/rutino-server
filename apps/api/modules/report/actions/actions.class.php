@@ -24,7 +24,7 @@ class reportActions extends autoreportActions
 			  ->select('r.id')
 			  ->from('report r')
 			  ->innerJoin('a.Wallet w')
-			  ->innerJoin('w.User u')
+			  ->innerJoin('w.sfGuardUser u')
 			  ->where('user_id = ?', $user_id)
 			  ->addWhere('id = ?', $item_id)
 			  ->limit(1);

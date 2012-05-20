@@ -47,21 +47,21 @@ abstract class BaseReport extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('report');
-        $this->hasColumn('id', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 20, array(
              'type' => 'integer',
              'primary' => true,
              'autoincrement' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('global_id', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('wallet_id', 'integer', 4, array(
+        $this->hasColumn('wallet_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',

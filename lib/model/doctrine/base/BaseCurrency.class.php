@@ -44,11 +44,11 @@ abstract class BaseCurrency extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('currency');
-        $this->hasColumn('id', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 20, array(
              'type' => 'integer',
              'primary' => true,
              'autoincrement' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('global_id', 'string', 255, array(
              'type' => 'string',

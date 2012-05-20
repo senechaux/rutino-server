@@ -25,7 +25,7 @@ class transactionActions extends autotransactionActions
 			  ->from('transaction t')
 			  ->innerJoin('t.Account a')
 			  ->innerJoin('a.Wallet w')
-			  ->innerJoin('w.User u')
+			  ->innerJoin('w.sfGuardUser u')
 			  ->where('user_id = ?', $user_id)
 			  ->addWhere('id = ?', $item_id)
 			  ->limit(1);

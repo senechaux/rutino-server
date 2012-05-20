@@ -62,26 +62,26 @@ abstract class BasePeriodicTransaction extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('periodic_transaction');
-        $this->hasColumn('id', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 20, array(
              'type' => 'integer',
              'primary' => true,
              'autoincrement' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('global_id', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('account_id', 'integer', 4, array(
+        $this->hasColumn('account_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
+             'length' => 20,
              ));
-        $this->hasColumn('currency_id', 'integer', 4, array(
+        $this->hasColumn('currency_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('name', 'string', 4000, array(
              'type' => 'string',

@@ -1,18 +1,7 @@
-User:
-  actAs: { Timestampable: ~ }
-  columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    username:     { type: string(255), notnull: true }
-    password:     { type: string(255), notnull: true }
-    hash:         { type: string(255), notnull: true }
-    email:        { type: string(255), notnull: true }
-    created_at:   { type: timestamp, notnull: true }
-    updated_at:   { type: timestamp, notnull: true }
-
 AccountType:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
     name:         { type: string(255), notnull: true }
     description:  { type: string(4000), notnull: false }
@@ -23,7 +12,7 @@ AccountType:
 Currency:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
     name:         { type: string(255), notnull: true }
     description:  { type: string(4000) }
@@ -34,27 +23,27 @@ Currency:
 Wallet:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
-    user_id:      { type: integer(4), notnull: true }
+    user_id:      { type: integer(20), notnull: true }
     name:         { type: string(255), notnull: true }
     description:  { type: string(4000), notnull: false }
     created_at:   { type: timestamp, notnull: true }
     updated_at:   { type: timestamp, notnull: true }
   relations:
-    User: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: WalletUser }
+    sfGuardUser: { onDelete: CASCADE, local: user_id, foreign: id, foreignAlias: WalletUser }
 
 Account:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
-    global_id:    { type: string(255), notnull: true }
-    wallet_id:    { type: integer(4), notnull: true }
-    account_type_id: { type: integer(4), notnull: true }
-    name:         { type: string(255), notnull: true }
-    description:  { type: string(4000), notnull: false }
-    created_at:   { type: timestamp, notnull: true }
-    updated_at:   { type: timestamp, notnull: true }
+    id:              { type: integer(20), notnull: true, primary: true, autoincrement: true }
+    global_id:       { type: string(255), notnull: true }
+    wallet_id:       { type: integer(20), notnull: true }
+    account_type_id: { type: integer(20), notnull: true }
+    name:            { type: string(255), notnull: true }
+    description:     { type: string(4000), notnull: false }
+    created_at:      { type: timestamp, notnull: true }
+    updated_at:      { type: timestamp, notnull: true }
   relations:
     Wallet: { onDelete: CASCADE, local: wallet_id, foreign: id, foreignAlias: AccountWallet }
     AccountType:   { onDelete: CASCADE, local: account_type_id, foreign: id, foreignAlias: AccountType }
@@ -62,10 +51,10 @@ Account:
 Transaction:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
-    account_id:   { type: integer(4), notnull: true }
-    currency_id:  { type: integer(4), notnull: true }
+    account_id:   { type: integer(20), notnull: true }
+    currency_id:  { type: integer(20), notnull: true }
     name:         { type: string(255), notnull: false }
     description:  { type: string(4000), notnull: false }
     amount:       { type: float, notnull: true }
@@ -81,10 +70,10 @@ Transaction:
 PeriodicTransaction:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
-    account_id:   { type: integer(4), notnull: true }
-    currency_id:  { type: integer(4), notnull: true }
+    account_id:   { type: integer(20), notnull: true }
+    currency_id:  { type: integer(20), notnull: true }
     name:         { type: string(4000) }
     description:  { type: string(4000) }
     amount:       { type: float, notnull: true }
@@ -101,9 +90,9 @@ PeriodicTransaction:
 Report:
   actAs: { Timestampable: ~ }
   columns:
-    id:           { type: integer(4), notnull: true, primary: true, autoincrement: true }
+    id:           { type: integer(20), notnull: true, primary: true, autoincrement: true }
     global_id:    { type: string(255), notnull: true }
-    wallet_id:    { type: integer(4), notnull: true }
+    wallet_id:    { type: integer(20), notnull: true }
     name:         { type: string(255), notnull: false }
     description:  { type: string(4000), notnull: false }
     date_from:    { type: timestamp, notnull: true }

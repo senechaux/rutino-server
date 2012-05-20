@@ -12,7 +12,7 @@
  * @property string $description
  * @property timestamp $created_at
  * @property timestamp $updated_at
- * @property User $User
+ * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $AccountWallet
  * @property Doctrine_Collection $ReportWallet
  * 
@@ -23,7 +23,7 @@
  * @method string              getDescription()   Returns the current record's "description" value
  * @method timestamp           getCreatedAt()     Returns the current record's "created_at" value
  * @method timestamp           getUpdatedAt()     Returns the current record's "updated_at" value
- * @method User                getUser()          Returns the current record's "User" value
+ * @method sfGuardUser         getSfGuardUser()   Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getAccountWallet() Returns the current record's "AccountWallet" collection
  * @method Doctrine_Collection getReportWallet()  Returns the current record's "ReportWallet" collection
  * @method Wallet              setId()            Sets the current record's "id" value
@@ -33,7 +33,7 @@
  * @method Wallet              setDescription()   Sets the current record's "description" value
  * @method Wallet              setCreatedAt()     Sets the current record's "created_at" value
  * @method Wallet              setUpdatedAt()     Sets the current record's "updated_at" value
- * @method Wallet              setUser()          Sets the current record's "User" value
+ * @method Wallet              setSfGuardUser()   Sets the current record's "sfGuardUser" value
  * @method Wallet              setAccountWallet() Sets the current record's "AccountWallet" collection
  * @method Wallet              setReportWallet()  Sets the current record's "ReportWallet" collection
  * 
@@ -47,21 +47,21 @@ abstract class BaseWallet extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('wallet');
-        $this->hasColumn('id', 'integer', 4, array(
+        $this->hasColumn('id', 'integer', 20, array(
              'type' => 'integer',
              'primary' => true,
              'autoincrement' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('global_id', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('user_id', 'integer', 4, array(
+        $this->hasColumn('user_id', 'integer', 20, array(
              'type' => 'integer',
              'notnull' => true,
-             'length' => 4,
+             'length' => 20,
              ));
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
@@ -86,7 +86,7 @@ abstract class BaseWallet extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('User', array(
+        $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
