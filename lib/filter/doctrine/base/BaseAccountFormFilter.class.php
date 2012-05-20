@@ -13,7 +13,7 @@ abstract class BaseAccountFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'mobile_id'       => new sfWidgetFormFilterInput(),
+      'global_id'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'wallet_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Wallet'), 'add_empty' => true)),
       'account_type_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('AccountType'), 'add_empty' => true)),
       'name'            => new sfWidgetFormFilterInput(array('with_empty' => false)),
@@ -23,7 +23,7 @@ abstract class BaseAccountFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'mobile_id'       => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'global_id'       => new sfValidatorPass(array('required' => false)),
       'wallet_id'       => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Wallet'), 'column' => 'id')),
       'account_type_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('AccountType'), 'column' => 'id')),
       'name'            => new sfValidatorPass(array('required' => false)),
@@ -50,7 +50,7 @@ abstract class BaseAccountFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'              => 'Number',
-      'mobile_id'       => 'Number',
+      'global_id'       => 'Text',
       'wallet_id'       => 'ForeignKey',
       'account_type_id' => 'ForeignKey',
       'name'            => 'Text',

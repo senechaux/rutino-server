@@ -16,7 +16,7 @@ abstract class BaseTransactionForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
-      'mobile_id'   => new sfWidgetFormInputText(),
+      'global_id'   => new sfWidgetFormInputText(),
       'account_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Account'), 'add_empty' => false)),
       'currency_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Currency'), 'add_empty' => false)),
       'name'        => new sfWidgetFormInputText(),
@@ -31,7 +31,7 @@ abstract class BaseTransactionForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'mobile_id'   => new sfValidatorInteger(array('required' => false)),
+      'global_id'   => new sfValidatorString(array('max_length' => 255)),
       'account_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Account'))),
       'currency_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Currency'))),
       'name'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),

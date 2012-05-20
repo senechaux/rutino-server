@@ -13,6 +13,7 @@ abstract class BaseFormDoctrine extends sfFormDoctrine
   public function setup()
   {
   	unset(
+      $this['global_id'], 
       $this['created_at'], 
       $this['updated_at']
     );

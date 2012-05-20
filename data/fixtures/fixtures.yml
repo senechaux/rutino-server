@@ -1,13 +1,11 @@
 Wallet:
   Wallet_1:
-    mobile_id: null
     User: User_1
     name: Carteralex
     description: ''
     created_at: '2012-05-18 21:12:17'
     updated_at: '2012-05-18 21:12:17'
   Wallet_2:
-    mobile_id: null
     User: User_2
     name: Carterangel
     description: ''
@@ -15,7 +13,6 @@ Wallet:
     updated_at: '2012-05-18 21:12:25'
 Account:
   Account_1:
-    mobile_id: null
     Wallet: Wallet_1
     AccountType: AccountType_1
     name: Visa
@@ -23,7 +20,6 @@ Account:
     created_at: '2012-05-18 21:13:07'
     updated_at: '2012-05-18 21:13:07'
   Account_2:
-    mobile_id: null
     Wallet: Wallet_2
     AccountType: AccountType_2
     name: Santander
@@ -32,28 +28,24 @@ Account:
     updated_at: '2012-05-18 21:13:14'
 AccountType:
   AccountType_1:
-    mobile_id: null
     name: 'Credit card'
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:40'
     updated_at: '2012-05-18 21:12:40'
   AccountType_2:
-    mobile_id: null
     name: 'Bank account'
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:47'
     updated_at: '2012-05-18 21:12:47'
   AccountType_3:
-    mobile_id: null
     name: Deposit
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:51'
     updated_at: '2012-05-18 21:12:51'
   AccountType_4:
-    mobile_id: null
     name: Cash
     description: ''
     icon: ''
@@ -61,7 +53,6 @@ AccountType:
     updated_at: '2012-05-18 21:12:55'
 Transaction:
   Transaction_1:
-    mobile_id: null
     Account: Account_1
     Currency: Currency_1
     name: Nomina
@@ -73,7 +64,6 @@ Transaction:
     created_at: '2012-05-18 21:14:52'
     updated_at: '2012-05-18 21:14:52'
   Transaction_2:
-    mobile_id: null
     Account: Account_2
     Currency: Currency_2
     name: Mobile
@@ -101,14 +91,12 @@ User:
     updated_at: '2012-05-18 21:12:00'
 Currency:
   Currency_1:
-    mobile_id: null
     name: Dollar
     description: ''
     exchange: '0.89'
     created_at: '2012-05-18 21:13:40'
     updated_at: '2012-05-18 21:13:40'
   Currency_2:
-    mobile_id: null
     name: Euro
     description: ''
     exchange: '1.00'

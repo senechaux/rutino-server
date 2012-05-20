@@ -13,6 +13,7 @@ class AccountForm extends BaseAccountForm
   public function configure()
   {
   	unset(
+      $this['global_id'], 
       $this['created_at'], 
       $this['updated_at']
     );

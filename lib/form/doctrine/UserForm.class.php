@@ -13,6 +13,7 @@ class UserForm extends BaseUserForm
   public function configure()
   {
   	unset(
+      $this['global_id'], 
       $this['created_at'], 
       $this['updated_at']
     );

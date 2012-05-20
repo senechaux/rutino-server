@@ -13,7 +13,7 @@ abstract class BaseAccountTypeFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'mobile_id'   => new sfWidgetFormFilterInput(),
+      'global_id'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description' => new sfWidgetFormFilterInput(),
       'icon'        => new sfWidgetFormFilterInput(),
@@ -22,7 +22,7 @@ abstract class BaseAccountTypeFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'mobile_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'global_id'   => new sfValidatorPass(array('required' => false)),
       'name'        => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
       'icon'        => new sfValidatorPass(array('required' => false)),
@@ -48,7 +48,7 @@ abstract class BaseAccountTypeFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'          => 'Number',
-      'mobile_id'   => 'Number',
+      'global_id'   => 'Text',
       'name'        => 'Text',
       'description' => 'Text',
       'icon'        => 'Text',

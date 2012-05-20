@@ -13,7 +13,7 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'mobile_id'   => new sfWidgetFormFilterInput(),
+      'global_id'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'account_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Account'), 'add_empty' => true)),
       'currency_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Currency'), 'add_empty' => true)),
       'name'        => new sfWidgetFormFilterInput(),
@@ -27,7 +27,7 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'mobile_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'global_id'   => new sfValidatorPass(array('required' => false)),
       'account_id'  => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Account'), 'column' => 'id')),
       'currency_id' => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Currency'), 'column' => 'id')),
       'name'        => new sfValidatorPass(array('required' => false)),
@@ -58,7 +58,7 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'          => 'Number',
-      'mobile_id'   => 'Number',
+      'global_id'   => 'Text',
       'account_id'  => 'ForeignKey',
       'currency_id' => 'ForeignKey',
       'name'        => 'Text',

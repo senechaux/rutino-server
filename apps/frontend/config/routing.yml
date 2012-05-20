@@ -5,6 +5,10 @@ api_auth:
   url:     /api/auth/:username/:password
   param:   { module: api, action: auth }
 
+api_wallets:
+  url:     /api/wallet/list
+  param:   { module: api, action: walletlist }
+
 # default rules
 homepage:
   url:   /

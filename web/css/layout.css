@@ -1,0 +1,99 @@
+/*
+Colores corporativos:
+azul    = #1272C3
+naranja = #FC4503
+*/
+
+#main { 
+	width:980px; 
+	margin:0 auto;
+}
+#header { 
+	height:415px;
+}
+#header, 
+#content, 
+#footer { 
+}
+.col-1, 
+.col-2, 
+.col-3 { 
+	float:left;
+}
+
+#content {
+  background-color: #F8F9FA;
+}
+
+/*======= home =======*/
+#content #home .row-2 .col-1 { width: 592px; margin-right: 42px; }
+#content #home .row-2 .col-2 { width: 266px; }
+#content #home .row-2 .col-1 .col-2 { width:592px; padding:0 9px; }
+#content #home .row-2 .col-1 .col-2 .img-box1 img {
+  float    : left;
+  padding  : 5px;
+  width    : 265px;
+  height   : 170px;
+  border   : 1px solid #073856;
+  background-color : #FFF;
+}
+#content #home .row-2 .col-1 .col-2 .img-box1 img:hover {
+  background-color : #073856;
+}
+#content #home .row-2 .col-1 .col-2 .masinfo {
+  float : right;
+}
+#content #home .row-2 .col-1 .col-2 .img-box1 h4 {
+  margin  : 10px 0 0 0;
+}
+
+#fb_sharec2s {
+  position : absolute;
+  bottom   : 10px;
+  right    : 110px;
+}
+
+/*======= terminos y condiciones =======*/
+#terminosycondiciones .row-2 ul {
+    list-style: none outside circle;
+    padding-left: 40px;
+}
+
+#terminosycondiciones .row-2 ol {
+    list-style: none outside decimal;
+    padding-left: 40px;
+}
+
+#terminosycondiciones .row-2 ul li {
+    margin: 6px 0;
+    line-height: 20px;
+}
+
+/*======= index-1.html =======*/
+#page2 #content .row-2 .col-1 { width:592px; margin-right:42px;}
+#page2 #content .row-2 .col-2 { width:286px;}
+
+/*======= index-2.html =======*/
+#page3 #content .row-2 .col-1 { width:592px; margin-right:42px;}
+#page3 #content .row-2 .col-1 .col-1 { width:267px; margin-right:58px;}
+#page3 #content .row-2 .col-1 .col-2 { width:267px;}
+#page3 #content .row-2 .col-2 { width:286px;}
+
+/*======= index-3.html =======*/
+#page4 #content .row-2 .col-1 { width:592px; margin-right:42px;}
+#page4 #content .row-2 .col-1 .col-1 { width:199px; margin-right:0;}
+#page4 #content .row-2 .col-1 .col-2 { width:175px; margin-right:32px;}
+#page4 #content .row-2 .col-1 .col-3 { width:185px;}
+#page4 #content .row-2 .col-2 { width:286px;}
+
+/*======= apartamento/ficha =======*/
+#content .ficha .row-2 .col-1 { width:592px; margin-right:42px;}
+#content .ficha .row-2 .col-2 { width:266px;}
+
+/*=========================*/
+
+
+#footer { 
+	height:59px;
+	background-color:#f8f9fa;
+}

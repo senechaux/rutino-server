@@ -21,7 +21,7 @@ class apiActions extends sfActions {
 
         $q = Doctrine_Query::create()
                 ->select('u.id')
-                ->from('user u')
+                ->from('User u')
                 ->where('username=?', $username)
                 ->addWhere('password=?', $password);
 
@@ -32,18 +32,45 @@ class apiActions extends sfActions {
             $respuesta = $this->getResponse();
 
             // Cabeceras HTTP
-            $respuesta->setContentType('text/html');
+            $respuesta->setContentType('application/json');
             $respuesta->setHttpHeader('Content-Language', 'en');
             $respuesta->setStatusCode(200);
             $respuesta->addVaryHttpHeader('Accept-Language');
             $respuesta->addCacheControlHttpHeader('no-cache');
-            $respuesta->setContent($this->authResponse);
+            $respuesta->setContent(json_encode($this->authResponse));
         } else {
             //header('WWW-Authenticate: Basic realm="El usuario o la clave no coinciden."');
             header('HTTP/1.0 401 Unauthorized');
             exit;
         }
         
+        $this->setLayout(false);
+    }
+
+    public function executeWalletlist(sfWebRequest $request) {
+        //$username = $this->getRequestParameter('username');
+        $username = "alex";
+
+        $q = Doctrine_Query::create()
+          ->select('w.*')
+          ->from('Wallet w')
+          ->innerJoin('w.User u')
+          ->where('u.username=?', $username);
+         
+        $this->wallets = $q->fetchArray();
+
+        $respuesta = $this->getResponse();
+
+        // Cabeceras HTTP
+        $respuesta->setContentType('application/json');
+        $respuesta->setHttpHeader('Content-Language', 'en');
+        $respuesta->setStatusCode(200);
+        $respuesta->addVaryHttpHeader('Accept-Language');
+        $respuesta->addCacheControlHttpHeader('no-cache');
+        $respuesta->setContent(json_encode($this->wallets));
+
+        echo json_encode($this->wallets);
+
         $this->setLayout(false);
     }
 

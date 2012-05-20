@@ -13,7 +13,7 @@ abstract class BaseReportFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'mobile_id'   => new sfWidgetFormFilterInput(),
+      'global_id'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'wallet_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Wallet'), 'add_empty' => true)),
       'name'        => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
@@ -24,7 +24,7 @@ abstract class BaseReportFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
-      'mobile_id'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'global_id'   => new sfValidatorPass(array('required' => false)),
       'wallet_id'   => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Wallet'), 'column' => 'id')),
       'name'        => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
@@ -52,7 +52,7 @@ abstract class BaseReportFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'          => 'Number',
-      'mobile_id'   => 'Number',
+      'global_id'   => 'Text',
       'wallet_id'   => 'ForeignKey',
       'name'        => 'Text',
       'description' => 'Text',

@@ -1,0 +1,88 @@
+user:
+  class:   sfObjectRouteCollection
+  options:
+    model:   User
+    actions: [ create, delete, list, show, update ]
+    module:  user
+    column:  id
+    default_params:
+      sf_format:  json
+transaction:
+  class:   sfObjectRouteCollection
+  options:
+    model:   Transaction
+    actions: [ create, delete, list, show, update ]
+    module:  transaction
+    column:  id
+    default_params:
+      sf_format:  json
+report:
+  class:   sfObjectRouteCollection
+  options:
+    model:   Report
+    actions: [ create, delete, list, show, update ]
+    module:  report
+    column:  id
+    default_params:
+      sf_format:  json
+periodic_transaction:
+  class:   sfObjectRouteCollection
+  options:
+    model:   PeriodicTransaction
+    actions: [ create, delete, list, show, update ]
+    module:  periodic_transaction
+    column:  id
+    default_params:
+      sf_format:  json
+currency:
+  class:   sfObjectRouteCollection
+  options:
+    model:   Currency
+    actions: [ create, delete, list, show, update ]
+    module:  currency
+    column:  id
+    default_params:
+      sf_format:  json
+account_type:
+  class:   sfObjectRouteCollection
+  options:
+    model:   AccountType
+    actions: [ create, delete, list, show, update ]
+    module:  account_type
+    column:  id
+    default_params:
+      sf_format:  json
+account:
+  class:   sfObjectRouteCollection
+  options:
+    model:   Account
+    actions: [ create, delete, list, show, update ]
+    module:  account
+    column:  id
+    default_params:
+      sf_format:  json
+wallet:
+  class:   sfObjectRouteCollection
+  options:
+    model:   Wallet
+    actions: [ create, delete, list, show, update ]
+    module:  wallet
+    column:  id
+    default_params:
+      sf_format:  json
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

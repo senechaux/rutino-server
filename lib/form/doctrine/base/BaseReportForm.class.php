@@ -16,7 +16,7 @@ abstract class BaseReportForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'          => new sfWidgetFormInputHidden(),
-      'mobile_id'   => new sfWidgetFormInputText(),
+      'global_id'   => new sfWidgetFormInputText(),
       'wallet_id'   => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Wallet'), 'add_empty' => false)),
       'name'        => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
@@ -28,7 +28,7 @@ abstract class BaseReportForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'mobile_id'   => new sfValidatorInteger(array('required' => false)),
+      'global_id'   => new sfValidatorString(array('max_length' => 255)),
       'wallet_id'   => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Wallet'))),
       'name'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 4000, 'required' => false)),

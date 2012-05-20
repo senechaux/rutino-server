@@ -1,0 +1,1371 @@
+/*
+Colores corporativos:
+azul    = #1272C3
+naranja = #FC4503
+*/
+/*=========================== TAGS ============================*/
+* { 
+  margin:0; 
+  padding:0;
+}
+
+html {
+  min-width:980px;
+} 
+
+body { 
+  background:url(../images/tail-body.jpg) repeat center top;
+  font-family:Arial, Helvetica, sans-serif; 
+  font-size:14px;
+  line-height:1em; 
+  color:#556e7b; 
+  min-width:980px;
+}
+
+object { 
+  vertical-align:top; 
+  outline:none;
+}
+
+input, 
+textarea, 
+select { 
+  font-family:Arial, Helvetica, sans-serif; 
+  font-size:1em; 
+  vertical-align:middle; 
+  font-weight:normal;
+}
+
+fieldset {
+  border:0;
+}
+
+p { 
+  margin:20px 0 0 0;
+  padding:0;
+  line-height:1.5em;
+  text-align: justify;
+}
+.p0 {
+  margin:0;
+}
+
+img { 
+  border:0; 
+  vertical-align:top; 
+  text-align:left;
+}
+
+ul, 
+ol { 
+  list-style:none;
+}
+
+/*========================== ALIGMENT =========================*/
+
+.fleft { 
+  float:left;
+}
+
+.fright { 
+  float:right;
+}
+
+.clear { 
+  clear:both;
+}
+
+.alignright { 
+  text-align:right;
+}
+
+.aligncenter { 
+  text-align:center;
+}
+
+.wrapper { 
+  width:100%; 
+  overflow:hidden;
+}
+
+.container { 
+  width:100%;
+}
+
+/*=========================== TAILING =========================*/
+
+.tail-top { 
+  background:url(../images/tail-top.gif) left top repeat-x #fff;
+}
+
+.tail-bottom { 
+  background:url(../images/tail-bottom.gif) left bottom repeat-x;
+}
+
+/*=========================== FORMS ===========================*/
+
+#search-form label {
+  color:#dbf3f9;
+  font-family:Tahoma, Arial, helvetica, sans-serif;
+  display:block;
+  font-weight:bold;
+  font-size:.92em;
+  padding-bottom:6px;
+}
+#search-form fieldset {
+  float:left;
+}
+#search-form span {
+  float:left;
+  width:102px;
+}
+#search-form input {
+  background-color:#f7f8f8;
+  border:1px solid #4f6470;
+  padding:2px 0 2px 10px;
+  width:80px;
+}
+#search-form select {
+  height:20px;
+  background-color:#f7f8f8;
+  border:1px solid #4f6470;
+  font-family:Tahoma, Arial, helvetica, sans-serif;
+}
+#search-form fieldset.style1 {
+  width:233px;
+}
+#search-form fieldset.style1 select {
+  width:213px;
+  color:#4f5e65;
+  margin-bottom:10px;
+  font-weight:bold;
+}
+#search-form fieldset.style1 input {
+  font-size:.92em;
+}
+#search-form fieldset.style1 a {
+  font-family:Tahoma, Arial, helvetica, sans-serif;
+  color:#fff;
+}
+#search-form fieldset.style1 p {
+  padding-top:15px;
+  margin:0;
+}
+#search-form fieldset.style2 {
+  width:312px;
+}
+#search-form fieldset.style2 input {
+  color:#097ec8;
+  font-weight:bold;
+  width:310px;
+  font-family:Tahoma, Arial, helvetica, sans-serif;
+  margin-bottom:10px;
+}
+#search-form fieldset.style2 select {
+  font-size:.92em;
+  width:92px;
+}
+#search-form fieldset.style2 a {
+  color:#f2f6f8;
+  font-size:1.17em;
+  line-height:1.2em;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  display:block;
+  float:left;
+  background:url(../images/button-tail.gif) repeat-x left top;
+  margin:22px 0 0 8px;
+}
+#search-form fieldset.style2 a em {
+  display:block;
+  background:url(../images/button-left.gif) no-repeat left top;
+}
+#search-form fieldset.style2 a b {
+  font-style:normal;
+  display:block;
+  background:url(../images/button-right.gif) no-repeat right top;
+  padding:7px 18px 16px 18px;
+}
+#search-form fieldset.style2 a:hover {
+  color:#000;
+}
+#search-form .extra {
+  padding-bottom:20px;
+}
+
+/*---*/
+
+#contacts-form fieldset {
+  float:left;
+}
+#contacts-form .field1 {
+  width:319px;
+}
+#contacts-form .field2 {
+  width:271px;
+}
+#contacts-form .field1 div { 
+  height:53px;
+}
+#contacts-form label {
+  display:block;
+}
+#contacts-form input {
+  width:258px; 
+  padding:2px 0 2px 3px; 
+  background:#fff;
+  color:#556e7b; 
+  border:1px solid #b3c2cc; 
+  vertical-align:top;	
+  line-height:1.2em;
+}
+#contacts-form textarea { 
+  width:266px; 
+  height:121px; 
+  overflow:auto;
+  background:#fff;
+  color:#556e7b; 
+  border:1px solid #b3c2cc; 
+  padding:2px 0 2px 3px;
+  margin-bottom:15px; 
+}
+
+/*========================== LISTS ============================*/
+
+.list {
+  padding-bottom:10px;
+}
+.list li {
+  padding:0 0 5px 10px;
+  background:url(../images/marker1.gif) no-repeat left 5px;
+  margin-top: 5px;
+}
+.list li ul{
+  margin-top: 10px;
+}
+.list1 li {
+  padding-bottom:18px;
+}
+.list1 li cite {
+  font-style:normal;
+  line-height:1.5em;
+  color:#026fb0;
+}
+.list1 li h5 {
+  text-align:right;
+}
+
+/*========================== OTHER ============================*/
+
+.img-indent {
+  margin-bottom:20px;
+}
+
+.img-box1 { 
+  width:100%; 
+  overflow:hidden;
+}
+.img-box1 img { 
+  float:left; 
+  margin:0 20px 0 0;
+}
+
+.address span { 
+  float:right; 
+  margin-right:12px;
+}
+
+.tab1 {
+  width:100%;
+  border:0;
+  margin-bottom:10px;
+} 
+.tab1 td {
+  color:#026fb0;
+  padding:4px 0 5px 10px;
+}
+.tab1 tr.top td {
+  color:#fff;
+  font-weight:bold;
+  background:#a3acaf;
+}
+.tab1 tr.alt {
+  background-color:#fff;
+}
+
+.tab2 {
+  width:100%;
+  border:0;
+  margin-bottom:10px;
+  border-bottom:1px solid #fff;
+} 
+.tab2 td {
+  color:#026fb0;
+  padding:5px 0 5px 10px;
+}
+.tab2 tr.top td {
+  color:#858a8c;
+  font-weight:bold;
+  background:#fff;
+}
+.tab2 tr td {
+  border-bottom:1px solid #fff;
+}
+.tab2 tr td a {
+  font-size:.92em;
+  color:#f56228;
+  font-weight:bold;
+}
+
+dl {
+  color:#026fb0;
+  line-height:1.5em;
+}
+dl dt {
+  font-weight:bold;
+}
+dl dd {
+  padding-bottom:20px;
+}
+
+/*================= TXT, LINKS, LINES, TITLES =================*/
+
+a {	
+  color:#1272c3; 
+  outline:none;
+}
+a:hover {
+  /*	background-color: #F9F8B6;*/
+  color: #000;
+}
+
+
+h2 {
+  margin-bottom  : 17px;
+  line-height    : 1.29em;
+  font-size      : 1.5em;
+  color          : #BBB;
+  text-transform : uppercase;
+  font-family    : Georgia, "Times New Roman", Times, serif;
+}
+h3 {
+  font-size:25px;
+  line-height:1.2em;
+  color:#949a9c;
+  text-transform:uppercase;
+  margin-bottom:32px;
+}
+h4 {
+  font-size:1.17em;
+  text-transform:uppercase;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  margin-bottom:17px;
+  line-height:1.29em;
+}
+h5 {
+  font-size:1em;
+  line-height:1.5em;
+  color:#026fb0;
+}
+h5.extra {
+  margin-bottom:17px;
+}
+
+.masinfo {
+  color : #FC4503;
+}
+
+.link {
+  color:#f56228;
+  text-transform:uppercase;
+}
+
+.link1 {
+  text-align:right;
+  font-size:.92em;
+  line-height:1.2em;
+}
+.link1 a {
+  color:#383e3f;
+  padding:1px 0 2px 21px;
+  margin:10px;
+  display:inline-block;
+  background:url(../images/marker.png) no-repeat left top;
+}
+
+.line-hor { 
+  margin:20px 0;
+  background:url(../images/line-hor.gif) repeat-x left top;
+  height:1px; 
+  overflow:hidden; 
+  font-size:0; 
+  line-height:0;
+}
+
+/*============================ BOXES ==========================*/
+
+.main-box {
+  width:100%;
+  background:url(../images/main-tail.jpg) repeat-y center 850px;
+}
+.main-box .top {
+  background:url(../images/main-top.jpg) no-repeat center -50px;
+}
+.main-box .bot {
+  background:url(../images/main-bot.jpg) no-repeat center bottom;
+  padding-bottom:112px;
+}
+
+/*---*/
+
+.nav-box {
+  margin-right: -6px;
+  width:auto;
+  position:absolute;
+  right:0;
+  top:54px;
+  background:url(../images/nav-tail.jpg) repeat-x left top;
+}
+.nav-box .left {
+  background:url(../images/nav-left.jpg) no-repeat left top;
+}
+.nav-box .right {
+  background:url(../images/nav-right.jpg) no-repeat right top;
+  padding:10px 0 48px 0;
+}
+.nav-box ul {
+  padding: 0 15px;
+}
+.nav-box ul li {
+  font-size:15px;
+  float:left;
+  line-height:1.2em;
+  text-transform:uppercase;
+  background:url(../images/divider.gif) no-repeat right top;
+  padding:5px 15px 2px;
+}
+.nav-box ul li.last {
+  background:none;
+  margin-right:0;
+}
+.nav-box ul li a.selected {
+  color: #e2ebf1;
+  text-decoration:none;
+  border-bottom:1px solid #e2ebf1;
+  border-top:1px solid #e2ebf1;
+}
+.nav-box ul li a {
+  color:#e2ebf1;
+  text-decoration:none;
+}
+.nav-box ul li a:hover {
+  color:#e2ebf1;
+  border-bottom:1px solid #e2ebf1;
+}
+
+/*---*/
+
+.box { 
+  background:#b9e0f7; 
+  width:100%;
+}
+.box.alt {
+  margin-bottom:20px;
+}
+.box .inner { 
+  padding:12px 10px 14px 10px;
+}
+.box h4 {
+  text-transform:none;
+  color:#606466;
+}
+.box p {
+  color:#026fb0;
+}
+
+/*---*/
+
+.box1 { 
+  background:#f9e5af; 
+  width:100%;
+}
+.box1.alt {
+  margin-bottom:20px;
+}
+.box1 .inner { 
+  padding:12px 10px 14px 10px;
+}
+.box1 h4 {
+  text-transform:none;
+  color:#606466;
+}
+
+/*========================== HEADER ===========================*/
+
+#header .row-1 {
+  height:115px;
+  position:relative;
+}
+#header .row-1 .fleft {
+  padding:20px 0 0 10px;
+}
+#header .row-2 {
+  position:relative;
+} 
+#header .row-2 span {
+  position:absolute;
+  left:36px;
+  top:48px;
+}
+
+#header h1#cabecera {
+  display : none;
+}
+
+/*========================= CONTENT ===========================*/
+
+#content .row-1 {
+  height:175px;
+  background:url(../images/cont-tail1.gif) repeat-x left top;
+}
+#content .row-1 .inside {
+  padding:0 0 0 40px;
+}
+#content .row-1 .col-1 {
+  height:175px;
+  width:614px;
+  background:url(../images/bg-right.jpg) no-repeat right top;
+}
+#content .row-1 .col-2 { 
+  width:326px;
+}
+#content .row-1 .col-1 h4 {
+  color:#0d4668;
+  padding-top:15px;
+  margin-bottom:14px;
+}
+#content .row-2 {
+  background:url(../images/cont-tail3.gif) repeat-x left bottom #f8f9fa;
+  padding:30px 40px;
+  position:relative;
+}
+
+/*========================= FOOTER ============================*/
+
+#footer p {
+  padding:21px 20px 0 0;
+}
+#footer p,
+#footer a {
+  color:#8a9193;
+}
+#footer span {
+  text-transform:uppercase;
+}
+#footer a {
+  text-decoration:none;
+}
+#footer a:hover {
+  text-decoration:underline;
+}
+
+/*=============================================================*/
+
+/*--- carousel ---*/
+.carousel-box {
+  position:relative;
+  width:630px;
+  height:163px;
+  background:url(../images/cont-tail2.gif) repeat-x left top;
+}
+.carousel-box h2 {
+  padding-top:6px;
+  margin-bottom:8px;
+  font-size:1.17em;
+  text-transform:uppercase;
+  font-family:Georgia, "Times New Roman", Times, serif;
+  line-height:1.29em;
+  color:#556E7B;
+}
+.carousel-box .prev {
+  position:absolute;
+  left:15px;
+  top:80px;
+}
+.carousel-box .next {
+  position:absolute;
+  right:15px;
+  top:80px;
+}
+.carousel-box .carousel {
+  width:530px;
+  overflow:hidden;
+  margin-left:48px;
+}
+.carousel-box ul li {
+  float:left;
+  height:110px !important;
+  width:166px !important;
+  border:0;
+  margin-right:14px;
+  position:relative;
+}
+.carousel-box ul li a {
+  width:166px;
+  height:110px;
+  display:block;
+}
+.carousel-box ul li a img {
+  width:154px;
+  height:98px;
+}
+.carousel a {
+  opacity : 0.7;
+}
+.carousel a:hover {
+  opacity : 1;
+}
+
+/*========================= ACCESO BUSCADOR ==========================*/
+#accesobuscadorhome {
+  position      : relative;
+  left          : 630px;
+  top           : -163px;
+  margin-bottom : -163px;
+  width         : 348px;
+  height        : 161px;
+  border        : 1px solid #000000;
+  background-color: #FFFFFF;
+}
+
+#enlaceaccesobuscadorhome {
+  opacity : 0.8;
+}
+
+#enlaceaccesobuscadorhome:hover {
+  opacity : 1;
+}
+
+#capabuscador {
+  position      : relative;
+  left          : 40px;
+  top           : -145px;
+  width         : 310px;
+}
+
+#capabuscador span {
+  position      : relative;
+  top           : 50px;
+}
+
+/*========================= VÍDEO HOME ==========================*/
+#videohome {
+  position      : relative;
+  left          : 630px;
+  top           : -163px;
+  margin-bottom : -163px;
+  width         : 348px;
+  height        : 161px;
+  border        : 1px solid #000000;
+  background-color: #FFFFFF;
+}
+
+#enlacevideohome {
+  opacity : 0.8;
+}
+
+#enlacevideohome:hover {
+  opacity : 1;
+}
+
+/*=========================== APARTAMENTO ============================*/
+#content .ficha #calendario .ui-datepicker-multi .ui-datepicker-group {
+  width: 237px;
+}
+
+#content .ficha #calendario #leyenda_tipoocupacion ul li {
+  margin-top: 5px; 
+}
+
+#content .ficha #calendario #leyenda_tipoocupacion ul li span {
+  padding          : 2px 0 0 2px;
+  width            : 24px;
+  height           : 17px;
+  display          : inline-block;
+  opacity          : 0.35;
+  color            : #1C94C4;
+  background-color : #F6F6F6;
+  border           : 1px solid #CCCCCC;
+  font-weight      : bold;
+  text-decoration  : none;
+  text-align       : center;
+}
+
+#content .ficha #calendario #leyenda_tipoocupacion ul li span#disponible {
+  opacity: 1;
+}
+
+#content .ficha #calendario #leyenda_tipoocupacion ul li span#entradasalida {
+  background: Tomato url('/images/bg_calendariosalida.png') left top no-repeat;
+}
+
+div#fichaintroimagen {
+  float : left;
+  width : 165px;
+}
+
+div#fichaintroimagen img {
+  width : 135px;
+}
+
+div#fichaintrotexto {
+  float : right;
+  width : 425px;
+}
+
+#content .ficha h2 cufon {
+  color : #BBB !important;
+}
+
+/* Imagen destacada de la ficha*/
+#content .ficha .img-box1 img{
+}
+
+#content .ficha #fotos a {
+  text-decoration: none;
+}
+
+#content .ficha #fotos img {
+  margin: 6px 3px 0 0;
+}
+
+#content .ficha #mapaficha {
+  border : 1px solid #000000;
+  margin-bottom : 20px;
+}
+
+#tarifasapartamento .tab1 tr.top td {
+  text-align : center;
+}
+
+/*comentarios*/
+#formcomentario h4 {
+  margin     : 20px 0;
+  text-align : center;
+}
+
+#formcomentario div.rowformcomentarios {
+  margin : 10px 0;
+}
+
+.rowformcomentarios ul.error_list {
+  display: inline-block;
+  height: 18px;
+  line-height: 10px;
+  margin: -10px 0 0;
+  width: 150px;
+}
+
+#formcomentario label {
+  float        : left;
+  width        : 220px;
+  margin-right : 10px;
+  text-align   : right;
+}
+
+#formcomentario input.submit {
+  display : block;
+  margin  : 0 auto;
+}
+
+.comentario {
+  margin-top : 15px;
+  padding    : 10px;
+  border     : 1px solid #CCC;
+  background : url("/images/bg_degradadogris_bottom.png") repeat-x scroll left bottom transparent;
+}
+
+.comentario h5 {
+  margin : 10px 0;
+}
+
+.comentario .estrellasvaloracion {
+  float      : right;
+  width      : 180px;
+  height     : 37px;
+  background : transparent url('/images/estrellasvacias.png') left top no-repeat;
+}
+
+.comentario .estrellasvaloracion div {
+  position : relative;
+  height   : 37px;
+  background: transparent url('/images/estrellas.png') left top no-repeat;
+}
+
+.comentario p {
+  margin : 10px 0 0;
+}
+
+.comentario span {
+  display   : block;
+  margin    : -10px 0 0;
+  font-size : 12px;
+}
+
+/* Puntuación */
+.puntuacion {
+  float: right;
+  cursor: pointer;
+  margin: 2px 12px 0 0;
+  display: block;
+  overflow: visible;
+}
+.puntuacion:after {
+  content: '.';
+  display: block;
+  height: 0;
+  width: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.estrella {
+  float: left;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  display: inline-block;
+  text-indent: -999em;
+  cursor: pointer;
+}
+.estrella_izq,
+.estrella_der {
+  width: 18px
+}
+
+.estrella,
+.estrella a {
+  background: url('/images/estrella_sprite.png') no-repeat 0 0px;
+}
+
+.estrella_izq,
+.estrella_izq a {
+  background: url('/images/estrella_sprite_izq.png') no-repeat 0 0px;
+}
+
+.estrella_der,
+.estrella_der a {
+  background: url('/images/estrella_sprite_der.png') no-repeat 0 0px;
+}
+
+.estrella a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-position: 0 0px;
+}
+
+div.puntuacion div.on a {
+  background-position: 0px -45px;
+}
+
+div.puntuacion div.hover a,
+div.puntuacion div a:hover {
+  background-position: 0px -90px;
+}
+
+#num_votos {
+  margin: 5px;
+}
+
+#num_votos p {
+  font-size: 14px;
+}
+/* Fin Puntuación */
+
+/* Caracateristicas */
+#list_iconos_caracteristicas{
+  margin-bottom: 10px;
+}
+
+#list_iconos_caracteristicas li{
+  display: inline;
+  margin: 5px;
+}
+
+/*=========================== RESERVA ============================*/
+
+div#fichaintrotexto a.fichaintro_volver{
+  float  : left;
+  margin : 15px 15px 0;
+  color  : #FC4503;
+}
+
+#fichaintroimagen a#fichareserva {
+  float       : left;
+  margin      : 20px 0 0 20px;
+  width       : 95px;
+  height      : 37px;
+  line-height : 30px;
+  text-align  : center;
+  color       : #FFFFFF;
+  font-size   : 16px;
+  background  : transparent url('/images/bt_naranja.png') left top no-repeat;
+  text-decoration : none;
+}
+#fichaintroimagen a#fichareserva:hover {
+  text-decoration : underline;
+}
+
+#fichaintroimagen a#volverlistado {
+  float       : left;
+  margin      : 20px 0 0 20px;
+  color       : #FC4503;
+}
+#fichaintroimagen a#volverlistado:hover {
+  color : #000000;
+}
+
+#procesoreserva {
+  margin : 20px 0 0;
+  border : 1px solid #AAAAAA;
+  background: #EEE;
+}
+
+#procesoreserva h4 {
+  margin-left : 15px;
+}
+
+#fechasreserva {
+  margin-left : 15px;
+}
+
+#fechasreserva input#submitreservarfechas {
+  margin-top : 15px;
+}
+
+table#detalleprecio {
+  width         : 100%;
+  margin-bottom : 20px;
+  border-top    : 1px solid #AAAAAA;
+}
+
+table#detalleprecio th {
+  padding : 10px 0 10px 10px;
+  width   : 130px;
+  text-align    : left;
+  border-bottom : 1px solid #AAAAAA;
+  border-right  : 1px solid #AAAAAA;
+}
+
+table#detalleprecio td {
+  padding : 10px 0 10px 10px;
+  height  : 40px;
+  border-bottom : 1px solid #AAAAAA;
+}
+
+#guiaprocesoreserva {
+  height        : 39px;
+  margin-bottom : 15px;
+  border-left: 1px solid #AAAAAA;
+  border-top: 1px solid #AAAAAA;
+}
+
+#guiaprocesoreserva div {
+  float         : left;
+  padding       : 10px 0;
+  width         : 146.2px;
+  height        : 14px;
+  overflow      : hidden;
+  text-align    : center;
+  font-family   : Georgia,"Times New Roman",Times,serif;
+  border-bottom : 5px solid #AAAAAA;
+  border-right  : 1px solid #AAAAAA;
+  background    : #DDD;
+}
+
+#guiaprocesoreserva div.seleccionado {
+  border-bottom : 5px solid #000000;
+  background    : #666;
+  color         : #EEE;
+}
+
+#guiaprocesoreserva div.seleccionado#seleccionado {
+  background    : #666 url("/images/flechaup15x10.png") center 26px no-repeat;
+}
+
+.formadepago {
+  float  : left;
+  margin : 15px 10px 0;
+  width  : 175px;
+  text-align : center;
+}
+
+/*#procesoreserva a#pagar, #procesoreserva a#imprimir {*/
+#procesoreserva a.botonnaranja, a.botonnaranja {
+  float       : right;
+  margin      : 0 20px 0 20px;
+  width       : 95px;
+  height      : 37px;
+  line-height : 30px;
+  text-align  : center;
+  color       : #FFFFFF;
+  font-size   : 16px;
+  font-weight : bold;
+  background  : transparent url('/images/bt_naranja.png') left top no-repeat;
+  text-decoration : none;
+}
+
+.acciones_formulario_datos_personales_reserva{
+  margin: auto 32px;
+}
+.acciones_formulario_datos_personales_reserva a{
+  float: left;
+}
+.acciones_formulario_datos_personales_reserva #loaderdatosreserva{
+  float:right;
+}
+#error_datos_reserva{
+  float: left;
+  color: red;
+  font-weight: bold;
+  margin-left: 38px;
+  margin-top: 13px;
+}
+
+.lopd p{
+  margin: 0 10px 10px 0;
+  font-size: 0.8em;
+}
+/*=========================== BUSCADOR ============================*/
+
+#buscador {
+  float         : left;
+  padding       : 20px 10px 2px 20px;
+  width         : 250px;
+  height        : 297px;
+  border-bottom : 1px dashed;
+  background    : url("/images/bg_degradadogris_bottom.png") repeat-x scroll left bottom transparent;
+}
+
+#buscador h2 {
+  margin-bottom : 0;
+  font-size     : 16px;
+  color         : #556E7B;
+}
+
+#buscador form {
+  margin : 10px 0 0 0;
+}
+
+#buscador .divinput {
+  clear  : both;
+  float  : left;
+  width  : 100%;
+  color  : #000000;
+  margin : 0 0 10px;
+}
+
+#buscador label {  
+  clear  : both;
+  float  : left;
+  margin : 10px 0 5px;
+}
+
+#buscador .inputtext {
+  width  : 95%;
+}
+
+#buscador .divinput.select,
+#buscador .divinput.slider {
+  clear  : none;
+  margin : 8px 0 0 10px;
+  width  : auto;
+}
+
+#buscador .divinput.select select {
+  width  : 30px;
+}
+
+#buscador .divinput.slider {
+  margin-top : 10px;
+}
+
+#buscador #slider {
+  margin-top : 5px;
+  width      : 95%;
+}
+
+#buscador .divinput input {
+  clear  : none;
+  float  : left;
+}
+
+#buscador .divinput label {
+  clear: none;
+  float: left;
+  margin: 0 0 0 5px;
+  width: 90%;
+}
+
+#buscador .divinput ul {
+  margin : 0 0 20px;
+}
+
+#buscador .divinput ul li {
+  margin    : 5px 0 0;
+  font-size : 13px;
+}
+
+#buscador select {
+  clear  : both;
+  float  : left;
+}
+
+#buscador select.date {
+  clear  : none;
+  float  : none;
+}
+
+#buscador span.labelfechas {
+  float : left;
+  width : 50px;
+}
+
+#buscador .divinputsubmit {
+  float      : left;
+  margin     : 10px 0 20px;
+  width      : 100%;
+}
+
+#buscador .divinputsubmit .submit {
+  width : 130px;
+}
+
+#buscador .divinputsubmit a.reestablecerbuscador {
+  float      : right;
+  margin     : 5px 0 0;
+  width      : 120px;
+  text-align : center;
+  color      : #666666;
+}
+
+#buscador ul.error_list {
+  float  : left;
+  margin : 6px 0 0 4px;
+  padding-right: 20px;
+}
+
+#buscador a#mostrarocultarcaracteristicas {
+  float  : left;
+  clear  : both;
+  margin : 15px 0 20px;
+}
+
+
+/* HASTA QUE SE PONGA EL BUSCADOR EN FUNCIONAMIENTO */
+#mapabuscador {
+  float  : right;
+  margin : 50px 20px 0 0;
+}
+#mapabuscador {
+  margin : 0;
+}
+#mapabuscador h2 {
+  display : none;
+}
+/*#mapabuscador {
+  width       : 680px;
+  padding-top : 50px;
+  margin      : 0 auto;
+}*/
+
+#map_canvas {
+  margin : 20px 0 0 0;
+  width  : 680px;
+  height : 300px;
+  border : 1px solid #333;
+}
+#map_canvas {
+  margin : 0;
+  width  : 680px;
+  height : 300px;
+  border : 10px solid #333;
+}
+
+.gmaps_infowindow h4, .gmaps_infowindow p {
+  margin : 0;
+}
+
+/* HASTA QUE SE PONGA EL BUSCADOR EN FUNCIONAMIENTO */
+#listadoapartamentos {
+  float  : right;
+  margin : 30px 20px 50px 0;
+  width  : 680px;
+}
+
+/*#listadoapartamentos {
+  margin         : 30px auto 0;
+  padding-bottom : 50px;
+  width          : 680px;
+}*/
+
+/* HASTA QUE SE PONGA EL BUSCADOR EN FUNCIONAMIENTO */
+#listadoapartamentos #opcioneslistadoapartamentos {
+  margin        : 0 0 20px;
+  padding       : 10px;
+  border-top    : 2px solid;
+  border-bottom : 2px solid;
+}
+
+/*#listadoapartamentos #opcioneslistadoapartamentos {
+  display : none;
+}*/
+
+#listadoapartamentos #opcioneslistadoapartamentos #numapartamentos {
+  margin-right : 50px;
+}
+
+.fichaapartamento {
+  float   : left;
+  padding : 5px 14px 20px;
+  margin  : 0 0 20px;
+  border  : 1px solid #CCCCCC;
+  background : transparent url(/images/bg_degradadogris_bottom.png) left bottom repeat-x;
+}
+
+.fichaapartamento h3 {
+  clear  : both;
+  margin : 0 0 10px 0;
+}
+
+.fichaapartamento a.linkimagen {
+  float : left;
+}
+
+.fichaapartamento a.linkimagen img {
+  width: 133px;
+}
+
+.listapart_imagen {
+  float : left;
+  width : 150px;
+}
+
+.listapart_descripcion {
+  float  : left;
+  margin : 0 0 0 20px;
+  width  : 230px;
+  text-align: left;
+}
+
+.listapart_descripcion a {
+}
+
+.listapart_cajainfo {
+  float : right;
+  width : 250px;
+  text-align: right;
+}
+
+.listapart_precio {
+  float : right;
+  width : 150px;
+}
+
+.listapart_plazas {
+  float : right;
+  width : 100px;
+}
+
+.listapart_poblacion {
+  float  : right;
+  margin : 10px 0 0 0;
+  width  : 230px;
+}
+
+.listapart_masinfo, .listapart_reserva {
+  float  : right;
+  margin : 40px 0 0 20px;
+  color  : #FC4503;
+}
+
+/*=========================== IDIOMA ============================*/
+
+#form_idioma {
+  color: white;
+  float: right;
+  margin: 25px 15px 0 0;
+  /*  margin: 22px 85px 0 0;*/
+}
+#form_idioma a {
+  color: white;
+  text-decoration: none;
+}
+#form_idioma a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/*=========================== FACEBOOK ============================*/
+
+#icono_facebook{
+  float: right;
+  margin: 22px 0 0 0;
+}
+
+#icono_facebook img{
+  width: 32px;
+}
+
+
+/*=========================== cosas de symfony ============================*/
+
+ul.error_list
+{
+  margin: 0;
+  margin-bottom: 7px;
+  color: #d33;
+  border: none;
+  background-color: #f33;
+}
+
+ul.error_list li
+{
+  padding: 4px;
+  padding-left: 25px;
+  list-style: none;
+  color: #fff;
+  background: url(../images/error.png) no-repeat 4px 4px;
+}
+
+#content .flash_notice, #content .flash_error {
+  padding       : 30px;
+  font-weight   : bold;
+  border-bottom : 5px solid;
+}
+
+#content .flash_error {
+  color         : red;
+  font-size     : 1.2em;
+  border-color  : red;
+}
+
+/*=========================== PÁGINAS DE ERROR ============================*/
+#errorpage .wrapper {
+  padding    : 50px 0;
+  text-align : center;
+}
+
+#errorpage p {
+  text-align : center;
+}
+
+
+/*=============================== GENERAL ================================*/
+img.foto {
+  padding    : 5px;
+  border     : 1px solid #CCCCCC;
+  background : #FFFFFF;
+}

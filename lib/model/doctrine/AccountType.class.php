@@ -12,4 +12,12 @@
  */
 class AccountType extends BaseAccountType
 {
+	public function postSave($event) {
+		if (!$this->getGlobalId()){
+			$this->setGlobalId("w_" . $this->getId());
+			$this->save();
+		}
+		parent::postSave($event);
+	}
+
 }

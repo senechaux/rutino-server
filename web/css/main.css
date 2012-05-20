@@ -1,0 +1,50 @@
+/********** BACKEND ******************/
+
+#sf_admin_bar{
+  float: none;
+}
+
+#aviso_filtros{
+  border: 2px solid #83b8ef;
+  background-color: #C8DDF3;
+  margin-bottom: 5px;
+  padding: 3px;
+  width: 185px;
+}
+
+div.sf_admin_form_row div.content label{
+  float: none !important;
+  vertical-align: top;
+  white-space: nowrap;
+  display: inline !important;
+}
+
+#sf_admin_container input[type="text"]
+{
+  width: 40em;
+}
+
+#sf_admin_container div.sf_admin_form_field_es textarea,
+#sf_admin_container div.sf_admin_form_field_en textarea
+{
+  width: 40em;
+  height: 20em;
+}
+
+#sf_admin_container select.double_list_select,
+#sf_admin_container select.double_list_select-selected
+{
+  height: 35em;
+}
+
+/********** ADMIN ******************/
+#sf_admin_container .double_list_select, #sf_admin_container .double_list_select-selected {
+    min-width: 12em;
+    width: auto;
+}
+
+/******** MENU ****************/
+div#nav{
+  background-color: #C8DDF3;
+  padding-bottom: 5px;
+}
