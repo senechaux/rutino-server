@@ -1,12 +1,3 @@
-user:
-  class:   sfObjectRouteCollection
-  options:
-    model:   User
-    actions: [ create, delete, list, show, update ]
-    module:  user
-    column:  id
-    default_params:
-      sf_format:  json
 transaction:
   class:   sfObjectRouteCollection
   options:
