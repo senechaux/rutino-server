@@ -1,3 +1,8 @@
+auth:
+  url: /auth/:username/:password
+  param: { module: auth, action: index }
+
+
 user:
   class:   sfObjectRouteCollection
   options:
