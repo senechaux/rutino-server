@@ -1,93 +1,150 @@
-sfGuardUser:
-  User_admin:
-    first_name:     Administrator
-    last_name:      
-    email_address:  admin@rutino.com
-    username:       admin
-    password:       admin
-    is_super_admin: true
-    Groups:         [Group_admin]
-  alex:
-    first_name:     Alejandro
-    last_name:      Bosch
-    email_address:  bosch.alejandro@gmail.com
-    username:       alex
-    password:       alex
-    is_super_admin: false
-  angel:
-    first_name:     Angel
-    last_name:      Roldán
-    email_address:  ladirecciondeangel@gmail.com
-    username:       angel
-    password:       angel
-    is_super_admin: false
-
-sfGuardGroup:
-  Group_admin:
-    name:           admin
-    description:    Administrator group
-    Permissions:    [Permission_admin]
-
-sfGuardPermission:
-  Permission_admin:
-    name:           admin
-    description:    Administrator permission
-
+Report:
+  Report_1:
+    global_id: w_1
+    Wallet: Wallet_1
+    name: 'Reporte de Alex'
+    description: prueba
+    date_from: '2007-01-01 00:00:00'
+    date_to: '2013-01-01 16:17:00'
+    created_at: '2012-05-26 22:36:39'
+    updated_at: '2012-05-26 22:36:39'
+  Report_2:
+    global_id: w_2
+    Wallet: Wallet_2
+    name: 'Reporte de Angel'
+    description: prueba
+    date_from: '2011-01-02 00:03:00'
+    date_to: '2014-04-17 15:17:00'
+    created_at: '2012-05-26 22:37:17'
+    updated_at: '2012-05-26 22:37:17'
 Wallet:
   Wallet_1:
-    sfGuardUser: alex
-    name: Carteralex
+    global_id: w_1
+    sfGuardUser: sfGuardUser_2
+    name: Carteralex2
     description: ''
     created_at: '2012-05-18 21:12:17'
-    updated_at: '2012-05-18 21:12:17'
+    updated_at: '2012-05-22 23:05:13'
   Wallet_2:
-    sfGuardUser: angel
-    name: Carterangel
+    global_id: w_2
+    sfGuardUser: sfGuardUser_3
+    name: Carterangel2
     description: ''
     created_at: '2012-05-18 21:12:25'
-    updated_at: '2012-05-18 21:12:25'
+    updated_at: '2012-05-22 23:05:13'
+sfGuardUserGroup:
+  sfGuardUserGroup_1_1:
+    User: sfGuardUser_1
+    Group: sfGuardGroup_1
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: admin
+    description: 'Administrator permission'
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
+sfGuardGroupPermission:
+  sfGuardGroupPermission_1_1:
+    Group: sfGuardGroup_1
+    Permission: sfGuardPermission_1
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
+sfGuardGroup:
+  sfGuardGroup_1:
+    name: admin
+    description: 'Administrator group'
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: Administrator
+    last_name: null
+    email_address: admin@rutino.com
+    username: admin
+    algorithm: sha1
+    salt: 9161c8b60bc14bb2b790ce4d02d150c2
+    password: 92b95b5b7ee5fd6c0f98f130d30d6b2e16368ef0
+    is_active: true
+    is_super_admin: true
+    last_login: '2012-05-26 22:24:17'
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-26 22:24:17'
+  sfGuardUser_2:
+    first_name: Alejandro
+    last_name: Bosch
+    email_address: bosch.alejandro@gmail.com
+    username: alex
+    algorithm: sha1
+    salt: 19ccc2908109be5b3b808149dfa97d4f
+    password: 7c577c14938bcef210a3fdf5b39637c10fb7969e
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
+  sfGuardUser_3:
+    first_name: Angel
+    last_name: Roldán
+    email_address: ladirecciondeangel@gmail.com
+    username: angel
+    algorithm: sha1
+    salt: 83b1832a4a21e7e71ff85b1f291e000b
+    password: ec88761e7819a9a4768d9bd705f7fe984ac0b06b
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2012-05-22 23:05:13'
+    updated_at: '2012-05-22 23:05:13'
 Account:
   Account_1:
+    global_id: w_1
     Wallet: Wallet_1
     AccountType: AccountType_1
     name: Visa
     description: ''
     created_at: '2012-05-18 21:13:07'
-    updated_at: '2012-05-18 21:13:07'
+    updated_at: '2012-05-22 23:05:13'
   Account_2:
+    global_id: w_2
     Wallet: Wallet_2
-    AccountType: AccountType_2
+    AccountType: AccountType_4
     name: Santander
     description: ''
     created_at: '2012-05-18 21:13:14'
-    updated_at: '2012-05-18 21:13:14'
+    updated_at: '2012-05-22 23:05:13'
 AccountType:
   AccountType_1:
+    global_id: w_1
     name: 'Credit card'
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:40'
-    updated_at: '2012-05-18 21:12:40'
+    updated_at: '2012-05-22 23:05:13'
   AccountType_2:
+    global_id: w_2
     name: 'Bank account'
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:47'
-    updated_at: '2012-05-18 21:12:47'
+    updated_at: '2012-05-22 23:05:13'
   AccountType_3:
+    global_id: w_3
     name: Deposit
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:51'
-    updated_at: '2012-05-18 21:12:51'
+    updated_at: '2012-05-22 23:05:13'
   AccountType_4:
+    global_id: w_4
     name: Cash
     description: ''
     icon: ''
     created_at: '2012-05-18 21:12:55'
-    updated_at: '2012-05-18 21:12:55'
+    updated_at: '2012-05-22 23:05:13'
 Transaction:
   Transaction_1:
+    global_id: w_1
     Account: Account_1
     Currency: Currency_1
     name: Nomina
@@ -97,8 +154,9 @@ Transaction:
     picture: ''
     geo: ''
     created_at: '2012-05-18 21:14:52'
-    updated_at: '2012-05-18 21:14:52'
+    updated_at: '2012-05-22 23:05:13'
   Transaction_2:
+    global_id: w_2
     Account: Account_2
     Currency: Currency_2
     name: Mobile
@@ -108,17 +166,33 @@ Transaction:
     picture: ''
     geo: ''
     created_at: '2012-05-18 21:15:42'
-    updated_at: '2012-05-18 21:15:42'
+    updated_at: '2012-05-22 23:05:13'
 Currency:
   Currency_1:
+    global_id: w_1
     name: Dollar
     description: ''
     exchange: '0.89'
     created_at: '2012-05-18 21:13:40'
-    updated_at: '2012-05-18 21:13:40'
+    updated_at: '2012-05-22 23:05:13'
   Currency_2:
+    global_id: w_2
     name: Euro
     description: ''
     exchange: '1.00'
     created_at: '2012-05-18 21:15:10'
-    updated_at: '2012-05-18 21:15:10'
+    updated_at: '2012-05-22 23:05:13'
+PeriodicTransaction:
+  PeriodicTransaction_1:
+    global_id: w_1
+    Account: Account_2
+    Currency: Currency_2
+    name: Nomina
+    description: desc
+    amount: '1560.00'
+    date: '2012-05-27 23:00:00'
+    picture: ''
+    geo: ''
+    periodicity: '1'
+    created_at: '2012-05-26 22:25:40'
+    updated_at: '2012-05-26 22:25:41'
