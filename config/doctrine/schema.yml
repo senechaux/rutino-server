@@ -59,8 +59,9 @@ Transaction:
     description:  { type: string(4000), notnull: false }
     amount:       { type: float, notnull: true }
     date:         { type: timestamp, notnull: true }
+    latitude:     { type: float, notnull: false }
+    longitude:    { type: float, notnull: false }
     picture:      { type: blob }
-    geo:          { type: string(4000) }
     created_at:   { type: timestamp, notnull: true }
     updated_at:   { type: timestamp, notnull: true }
   relations:

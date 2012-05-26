@@ -13,8 +13,9 @@
  * @property string $description
  * @property float $amount
  * @property timestamp $date
+ * @property float $latitude
+ * @property float $longitude
  * @property blob $picture
- * @property string $geo
  * @property timestamp $created_at
  * @property timestamp $updated_at
  * @property Account $Account
@@ -28,8 +29,9 @@
  * @method string      getDescription() Returns the current record's "description" value
  * @method float       getAmount()      Returns the current record's "amount" value
  * @method timestamp   getDate()        Returns the current record's "date" value
+ * @method float       getLatitude()    Returns the current record's "latitude" value
+ * @method float       getLongitude()   Returns the current record's "longitude" value
  * @method blob        getPicture()     Returns the current record's "picture" value
- * @method string      getGeo()         Returns the current record's "geo" value
  * @method timestamp   getCreatedAt()   Returns the current record's "created_at" value
  * @method timestamp   getUpdatedAt()   Returns the current record's "updated_at" value
  * @method Account     getAccount()     Returns the current record's "Account" value
@@ -42,8 +44,9 @@
  * @method Transaction setDescription() Sets the current record's "description" value
  * @method Transaction setAmount()      Sets the current record's "amount" value
  * @method Transaction setDate()        Sets the current record's "date" value
+ * @method Transaction setLatitude()    Sets the current record's "latitude" value
+ * @method Transaction setLongitude()   Sets the current record's "longitude" value
  * @method Transaction setPicture()     Sets the current record's "picture" value
- * @method Transaction setGeo()         Sets the current record's "geo" value
  * @method Transaction setCreatedAt()   Sets the current record's "created_at" value
  * @method Transaction setUpdatedAt()   Sets the current record's "updated_at" value
  * @method Transaction setAccount()     Sets the current record's "Account" value
@@ -98,12 +101,16 @@ abstract class BaseTransaction extends sfDoctrineRecord
              'type' => 'timestamp',
              'notnull' => true,
              ));
+        $this->hasColumn('latitude', 'float', null, array(
+             'type' => 'float',
+             'notnull' => false,
+             ));
+        $this->hasColumn('longitude', 'float', null, array(
+             'type' => 'float',
+             'notnull' => false,
+             ));
         $this->hasColumn('picture', 'blob', null, array(
              'type' => 'blob',
-             ));
-        $this->hasColumn('geo', 'string', 4000, array(
-             'type' => 'string',
-             'length' => 4000,
              ));
         $this->hasColumn('created_at', 'timestamp', null, array(
              'type' => 'timestamp',

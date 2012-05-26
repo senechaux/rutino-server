@@ -23,8 +23,9 @@ abstract class BaseTransactionForm extends BaseFormDoctrine
       'description' => new sfWidgetFormTextarea(),
       'amount'      => new sfWidgetFormInputText(),
       'date'        => new sfWidgetFormDateTime(),
+      'latitude'    => new sfWidgetFormInputText(),
+      'longitude'   => new sfWidgetFormInputText(),
       'picture'     => new sfWidgetFormTextarea(),
-      'geo'         => new sfWidgetFormTextarea(),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
     ));
@@ -38,8 +39,9 @@ abstract class BaseTransactionForm extends BaseFormDoctrine
       'description' => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
       'amount'      => new sfValidatorNumber(),
       'date'        => new sfValidatorDateTime(),
+      'latitude'    => new sfValidatorNumber(array('required' => false)),
+      'longitude'   => new sfValidatorNumber(array('required' => false)),
       'picture'     => new sfValidatorString(array('required' => false)),
-      'geo'         => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));

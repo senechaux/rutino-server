@@ -5,3 +5,6 @@ all:
       dsn: 'mysql:host=localhost;dbname=rutino_server'
       username: root
       password:
+      # dsn:        mysql:dbname=yppwwvxi_rutino_server;host=localhost
+      # username:   yppwwvxi_rutino
+      # password:   langostin0s

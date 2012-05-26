@@ -20,8 +20,9 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
       'description' => new sfWidgetFormFilterInput(),
       'amount'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'date'        => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'latitude'    => new sfWidgetFormFilterInput(),
+      'longitude'   => new sfWidgetFormFilterInput(),
       'picture'     => new sfWidgetFormFilterInput(),
-      'geo'         => new sfWidgetFormFilterInput(),
       'created_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'  => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -34,8 +35,9 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
       'description' => new sfValidatorPass(array('required' => false)),
       'amount'      => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'date'        => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'latitude'    => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
+      'longitude'   => new sfValidatorSchemaFilter('text', new sfValidatorNumber(array('required' => false))),
       'picture'     => new sfValidatorPass(array('required' => false)),
-      'geo'         => new sfValidatorPass(array('required' => false)),
       'created_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'  => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -65,8 +67,9 @@ abstract class BaseTransactionFormFilter extends BaseFormFilterDoctrine
       'description' => 'Text',
       'amount'      => 'Number',
       'date'        => 'Date',
+      'latitude'    => 'Number',
+      'longitude'   => 'Number',
       'picture'     => 'Text',
-      'geo'         => 'Text',
       'created_at'  => 'Date',
       'updated_at'  => 'Date',
     );
