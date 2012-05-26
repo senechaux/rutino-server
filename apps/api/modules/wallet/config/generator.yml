@@ -28,3 +28,5 @@ generator:
 #        sort_default:                  []      # set to [column, asc|desc] in order to sort on a column
 #        filters:                               # list here the filters
 #          created_at:                  { date_format: 'Y-m-d', multiple: true }  # for instance
+      post:
+

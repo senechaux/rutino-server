@@ -21,22 +21,62 @@ class periodic_transactionActions extends autoperiodic_transactionActions
 			$item_id = $array['id'];
 
 			$q = Doctrine_Query::create()
-			  ->select('t.id')
-			  ->from('periodic_transaction p')
-			  ->innerJoin('p.Account a')
+			  ->select('pt.id')
+			  ->from('PeriodicTransaction pt')
+			  ->innerJoin('pt.Account a')
 			  ->innerJoin('a.Wallet w')
 			  ->innerJoin('w.sfGuardUser u')
 			  ->where('user_id = ?', $user_id)
-			  ->addWhere('id = ?', $item_id)
+			  ->addWhere('pt.id = ?', $item_id)
 			  ->limit(1);
 
-			$account = $q->fetchArray();
+			$periodic_transaction = $q->fetchArray();
 			
-			if (count($account)){
+			if (count($periodic_transaction)){
 				$this->objects[$item] = $array;
 			}else{
 				unset($this->objects[$item]);
 			}
+		}
+	}
+
+	public function embedAdditionalaccount_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('pt.id, a.global_id')
+			  ->from('PeriodicTransaction pt')
+			  ->innerJoin('pt.Account a')
+			  ->Where('pt.id = ?', $item_id)
+			  ->limit(1);
+
+			$periodic_transaction = $q->fetchArray();
+
+			$array['account_global_id'] = $periodic_transaction[0]['Account']['global_id'];
+			$this->objects[$item] = $array;
+		}
+	}
+
+	public function embedAdditionalcurrency_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('pt.id, c.global_id')
+			  ->from('PeriodicTransaction pt')
+			  ->innerJoin('pt.Currency c')
+			  ->Where('pt.id = ?', $item_id)
+			  ->limit(1);
+
+			$periodic_transaction = $q->fetchArray();
+
+			$array['currency_global_id'] = $periodic_transaction[0]['Currency']['global_id'];
+			$this->objects[$item] = $array;
 		}
 	}
 }

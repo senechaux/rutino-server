@@ -1,7 +1,7 @@
 <?php
 
 /**
- * account actions.
+ * Account actions.
  *
  * @package    rutino-server
  * @subpackage account
@@ -21,7 +21,7 @@ class accountActions extends autoaccountActions
 
 			$q = Doctrine_Query::create()
 			  ->select('a.id')
-			  ->from('account a')
+			  ->from('Account a')
 			  ->innerJoin('a.Wallet w')
 			  ->innerJoin('w.sfGuardUser u')
 			  ->where('user_id = ?', $user_id)
@@ -35,6 +35,44 @@ class accountActions extends autoaccountActions
 			}else{
 				unset($this->objects[$item]);
 			}
+		}
+	}
+
+	public function embedAdditionalwallet_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('a.id, w.global_id')
+			  ->from('Account a')
+			  ->innerJoin('a.Wallet w')
+			  ->Where('a.id = ?', $item_id)
+			  ->limit(1);
+
+			$account = $q->fetchArray();
+			$array['wallet_global_id'] = $account[0]['Wallet']['global_id'];
+			$this->objects[$item] = $array;
+		}
+	}
+
+	public function embedAdditionalaccount_type_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('a.id, ac.global_id')
+			  ->from('Account a')
+			  ->innerJoin('a.AccountType ac')
+			  ->Where('a.id = ?', $item_id)
+			  ->limit(1);
+
+			$account = $q->fetchArray();
+			$array['account_type_global_id'] = $account[0]['AccountType']['global_id'];
+			$this->objects[$item] = $array;
 		}
 	}
 }

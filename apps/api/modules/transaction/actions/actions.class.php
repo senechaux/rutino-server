@@ -22,7 +22,7 @@ class transactionActions extends autotransactionActions
 
 			$q = Doctrine_Query::create()
 			  ->select('t.id')
-			  ->from('transaction t')
+			  ->from('Transaction t')
 			  ->innerJoin('t.Account a')
 			  ->innerJoin('a.Wallet w')
 			  ->innerJoin('w.sfGuardUser u')
@@ -40,6 +40,44 @@ class transactionActions extends autotransactionActions
 			}
 			//echo "\n\n objects mod :";
 			//var_dump($this->objects);
+		}
+	}
+
+	public function embedAdditionalaccount_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('t.id, a.global_id')
+			  ->from('Transaction t')
+			  ->innerJoin('t.Account a')
+			  ->Where('t.id = ?', $item_id)
+			  ->limit(1);
+
+			$account = $q->fetchArray();
+			$array['account_global_id'] = $account[0]['Account']['global_id'];
+			$this->objects[$item] = $array;
+		}
+	}
+
+	public function embedAdditionalcurrency_global_id($item, $params)
+	{
+		if (isset($this->objects[$item])){
+			$array = $this->objects[$item];
+			$item_id = $array['id'];
+
+			$q = Doctrine_Query::create()
+			  ->select('t.id, c.global_id')
+			  ->from('Transaction t')
+			  ->innerJoin('t.Currency c')
+			  ->Where('t.id = ?', $item_id)
+			  ->limit(1);
+
+			$account = $q->fetchArray();
+			$array['currency_global_id'] = $account[0]['Currency']['global_id'];
+			$this->objects[$item] = $array;
 		}
 	}
 }
