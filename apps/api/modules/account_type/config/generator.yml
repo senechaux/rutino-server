@@ -11,7 +11,7 @@ generator:
 #        formats_strict:                true
 #        separator:                     ','     # separator used for multiple filters
       get:
-#        additional_params:             []      # list here additionnal params names, which are not object properties
+        additional_params:             [ user_id ]      # list here additionnal params names, which are not object properties
 #        default_format:                json    # the default format of the response. If not set, will default to json. accepted values are "json", "xml" or "yaml"
 #        display:                       []      # list here the fields to render in the response
 #        embed_relations:               []      # list here relations to embed in the response

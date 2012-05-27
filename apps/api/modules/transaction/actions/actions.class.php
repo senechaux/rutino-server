@@ -11,53 +11,12 @@
  */
 class transactionActions extends autotransactionActions
 {
-
-	public function embedAdditionaluser_id($item, $params)
-	{
-		$user_id = $this->getRequest()->getParameter('user_id');
-		if($user_id){
-			$array = $this->objects[$item];
-			$array['user_id'] = $user_id;
-			$item_id = $array['id'];
-
-			$q = Doctrine_Query::create()
-			  ->select('t.id')
-			  ->from('Transaction t')
-			  ->innerJoin('t.Account a')
-			  ->innerJoin('a.Wallet w')
-			  ->innerJoin('w.sfGuardUser u')
-			  ->where('user_id = ?', $user_id)
-			  ->addWhere('id = ?', $item_id)
-			  ->limit(1);
-
-			$account = $q->fetchArray();
-			
-			if (count($account)){
-				$this->objects[$item] = $array;
-			}else{
-				unset($this->objects[$item]);
-				//$this->objects[$item] = null;
-			}
-			//echo "\n\n objects mod :";
-			//var_dump($this->objects);
-		}
-	}
-
 	public function embedAdditionalaccount_global_id($item, $params)
 	{
 		if (isset($this->objects[$item])){
 			$array = $this->objects[$item];
-			$item_id = $array['id'];
-
-			$q = Doctrine_Query::create()
-			  ->select('t.id, a.global_id')
-			  ->from('Transaction t')
-			  ->innerJoin('t.Account a')
-			  ->Where('t.id = ?', $item_id)
-			  ->limit(1);
-
-			$account = $q->fetchArray();
-			$array['account_global_id'] = $account[0]['Account']['global_id'];
+			$array['account_global_id'] = $array['Account']['global_id'];
+			unset($array['Account']);
 			$this->objects[$item] = $array;
 		}
 	}
@@ -66,18 +25,19 @@ class transactionActions extends autotransactionActions
 	{
 		if (isset($this->objects[$item])){
 			$array = $this->objects[$item];
-			$item_id = $array['id'];
-
-			$q = Doctrine_Query::create()
-			  ->select('t.id, c.global_id')
-			  ->from('Transaction t')
-			  ->innerJoin('t.Currency c')
-			  ->Where('t.id = ?', $item_id)
-			  ->limit(1);
-
-			$account = $q->fetchArray();
-			$array['currency_global_id'] = $account[0]['Currency']['global_id'];
+			$array['currency_global_id'] = $array['Currency']['global_id'];
+			unset($array['Currency']);
 			$this->objects[$item] = $array;
 		}
+	}
+
+	public function query($params)
+	{
+		$query = parent::query($params);
+		$user_id = $this->getRequest()->getParameter('user_id');
+		if ($user_id){
+			$query->innerJoin('Account.Wallet Wallet')->innerJoin('Wallet.sfGuardUser sfGuardUser')->addWhere('sfGuardUser.id = ?', $user_id);
+		}
+		return $query;
 	}
 }

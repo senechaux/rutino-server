@@ -11,50 +11,23 @@
  */
 class reportActions extends autoreportActions
 {
-
-	public function embedAdditionaluser_id($item, $params)
-	{
-		$user_id = $this->getRequest()->getParameter('user_id');
-		if ($user_id){
-			$array = $this->objects[$item];
-			$array['user_id'] = $user_id;
-			$item_id = $array['id'];
-
-			$q = Doctrine_Query::create()
-			  ->select('r.id')
-			  ->from('Report r')
-			  ->innerJoin('r.Wallet w')
-			  ->innerJoin('w.sfGuardUser u')
-			  ->where('w.user_id = ?', $user_id)
-			  ->addWhere('r.id = ?', $item_id)
-			  ->limit(1);
-
-			$account = $q->fetchArray();
-			
-			if (count($account)){
-				$this->objects[$item] = $array;
-			}else{
-				unset($this->objects[$item]);
-			}
-		}
-	}
-
 	public function embedAdditionalwallet_global_id($item, $params)
 	{
 		if (isset($this->objects[$item])){
 			$array = $this->objects[$item];
-			$item_id = $array['id'];
-
-			$q = Doctrine_Query::create()
-			  ->select('r.id, w.global_id')
-			  ->from('Report r')
-			  ->innerJoin('r.Wallet w')
-			  ->Where('r.id = ?', $item_id)
-			  ->limit(1);
-
-			$account = $q->fetchArray();
-			$array['wallet_global_id'] = $account[0]['Wallet']['global_id'];
+			$array['wallet_global_id'] = $array['Wallet']['global_id'];
+			unset($array['Wallet']);
 			$this->objects[$item] = $array;
 		}
+	}
+
+	public function query($params)
+	{
+		$query = parent::query($params);
+		$user_id = $this->getRequest()->getParameter('user_id');
+		if ($user_id){
+			$query->innerJoin('Wallet.sfGuardUser sfGuardUser')->addWhere('sfGuardUser.id = ?', $user_id);
+		}
+		return $query;
 	}
 }

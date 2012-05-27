@@ -32,7 +32,7 @@ class authActions extends sfActions
         	//echo $users[0]["id"];
             $serializer = sfResourceSerializer::getInstance('json');
 		    $this->getResponse()->setContentType($serializer->getContentType());
-		    $this->output = $users[0]["id"];
+		    $this->output = $serializer->serialize($users[0]["id"], 'data', false);
         } else {
             //header('WWW-Authenticate: Basic realm="El usuario o la clave no coinciden."');
             header('HTTP/1.0 401 Unauthorized');
